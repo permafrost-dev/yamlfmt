@@ -25,6 +25,11 @@ builds:
       - linux
       - windows
       - darwin
+    ldflags:
+      - -s -w -X main.version={{.Version}} -X main.commit={{.Commit}} -X main.date={{.Date}}
+    goarch:
+      - amd64
+
 archives:
   - replacements:
       darwin: Darwin
